@@ -11,6 +11,18 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    
+    // Создаем яблоко в случайной точке сцены
+    func createApple(){
+        // Случайная точка на экране
+        let randX  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX-5)) + 1)
+        let randY  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY-5)) + 1)
+        // Создаем яблоко
+        let apple = Apple(position: CGPoint(x: randX, y: randY))
+        // Добавляем яблоко на сцену
+        self.addChild(apple)
+    }
+    
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
         // цвет фона сцены
@@ -49,13 +61,38 @@ class GameScene: SKScene {
         clockwiseButton.lineWidth = 10
         clockwiseButton.name = "clockwiseButton"
         self.addChild(clockwiseButton)
+        
+        createApple()
 
 }
     // вызывается при нажатии на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    }
+        // перебираем все точки, куда прикоснулся палец
+        for touch in touches {
+        // определяем координаты касания для точки
+            let touchLocation = touch.location(in: self)
+        // проверяем, есть ли объект по этим координатам, и если есть, то не наша ли это кнопка
+            guard let touchedNode = self.atPoint(touchLocation) as? SKShapeNode,
+                touchedNode.name == "counterClockwiseButton" || touchedNode.name == "clockwiseButton" else {
+                    return
+            }
+        // если это наша кнопка, заливаем ее зеленым
+            touchedNode.fillColor = .green
+        }
+        }
     // вызывается при прекращении нажатия на экран
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    // повторяем все то же самое для действия, когда палец отрывается от экрана
+        for touch in touches {
+            let touchLocation = touch.location(in: self)
+            
+            guard let touchedNode = self.atPoint(touchLocation) as? SKShapeNode,
+                touchedNode.name == "counterClockwiseButton" || touchedNode.name == "clockwiseButton" else {
+                    return
+            }
+    // но делаем цвет снова серым
+            touchedNode.fillColor = UIColor.gray
+        }
     }
     // вызывается при обрыве нажатия на экран, например, если телефон примет звонок и свернет приложение
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

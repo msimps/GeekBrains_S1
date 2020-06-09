@@ -15,6 +15,7 @@
 		34D68708248FBBE0009A3B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D68706248FBBE0009A3B63 /* LaunchScreen.storyboard */; };
 		34D68713248FBBE1009A3B63 /* _l_MoruginSergeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D68712248FBBE1009A3B63 /* _l_MoruginSergeiTests.swift */; };
 		34D6871E248FBBE1009A3B63 /* _l_MoruginSergeiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6871D248FBBE1009A3B63 /* _l_MoruginSergeiUITests.swift */; };
+		34D6872C248FC0FE009A3B63 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6872B248FC0FE009A3B63 /* Apple.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		34D68719248FBBE1009A3B63 /* 8l_MoruginSergeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8l_MoruginSergeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D6871D248FBBE1009A3B63 /* _l_MoruginSergeiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _l_MoruginSergeiUITests.swift; sourceTree = "<group>"; };
 		34D6871F248FBBE1009A3B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D6872B248FC0FE009A3B63 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				34D68704248FBBE0009A3B63 /* Assets.xcassets */,
 				34D68706248FBBE0009A3B63 /* LaunchScreen.storyboard */,
 				34D68709248FBBE0009A3B63 /* Info.plist */,
+				34D6872B248FC0FE009A3B63 /* Apple.swift */,
 			);
 			path = 8l_MoruginSergei;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D6872C248FC0FE009A3B63 /* Apple.swift in Sources */,
 				34D686FE248FBBDF009A3B63 /* GameScene.swift in Sources */,
 				34D68700248FBBE0009A3B63 /* GameViewController.swift in Sources */,
 				34D686F8248FBBDF009A3B63 /* AppDelegate.swift in Sources */,
