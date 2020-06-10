@@ -9,10 +9,26 @@
 import SpriteKit
 import GameplayKit
 
+protocol GameEvents: class{
+    func endGame()
+}
+
+
 class GameScene: SKScene {
     // наша змея
     var snake: Snake?
-
+    private weak var gameEventsDelegate: GameEvents?
+    
+    init(size: CGSize, gameEventsDelegate: GameEvents? = nil) {
+        super.init(size: size)
+        //endGameHook = endGame
+        self.gameEventsDelegate = gameEventsDelegate
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // Создаем яблоко в случайной точке сцены
     func createApple(){
         // Случайная точка на экране
@@ -143,7 +159,8 @@ extension GameScene: SKPhysicsContactDelegate {
             // создаем новое яблоко
             createApple()
         case CollisionCategories.EdgeBody: // проверяем, что это стенка экрана
-            break                         // соприкосновение со стеной будет домашним заданием
+            gameEventsDelegate?.endGame()
+            break
         default:
             break
         }
