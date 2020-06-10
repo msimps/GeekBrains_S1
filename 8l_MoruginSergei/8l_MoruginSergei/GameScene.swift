@@ -10,7 +10,9 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
+    // наша змея
+    var snake: Snake?
+
     
     // Создаем яблоко в случайной точке сцены
     func createApple(){
@@ -63,6 +65,10 @@ class GameScene: SKScene {
         self.addChild(clockwiseButton)
         
         createApple()
+        
+        // создаем змею по центру экрана и добавляем ее на сцену
+        snake = Snake(atPoint: CGPoint(x: view.scene!.frame.midX, y: view.scene!.frame.midY))
+        self.addChild(snake!)
 
 }
     // вызывается при нажатии на экран
