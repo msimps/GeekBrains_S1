@@ -37,12 +37,12 @@ class Snake: SKShapeNode {
     }
     
     func move(){
-    // если у змейки нет головы, ничего не перемещаем
+        // если у змейки нет головы, ничего не перемещаем
         guard !body.isEmpty else { return }
-    // перемещаем голову
+        // перемещаем голову
         let head = body[0]
         moveHead(head)
-    // перемещаем все сегменты тела
+        // перемещаем все сегменты тела
         for index in (0..<body.count) where index > 0 {
             let previousBodyPart = body[index-1]
             let currentBodyPart = body[index]
@@ -51,21 +51,31 @@ class Snake: SKShapeNode {
     }
     // перемещаем голову
     func moveHead(_ head: SnakeBodyPart){
-    // рассчитываем смещение точки
+        // рассчитываем смещение точки
         let dx = CGFloat(moveSpeed) * sin(angle);
         let dy = CGFloat(moveSpeed) * cos(angle);
-    // смещаем точку назначения головы
+        // смещаем точку назначения головы
         let nextPosition = CGPoint(x: head.position.x + dx, y: head.position.y + dy)
-    // действие перемещения головы
+        // действие перемещения головы
         let moveAction = SKAction.move(to: nextPosition, duration: 1.0)
-    // запуск действия перемещения
+        // запуск действия перемещения
         head.run(moveAction)
     }
     // перемещаем сегмент змеи
     func moveBodyPart(_ p: SnakeBodyPart, c: SnakeBodyPart){
-    // перемещаем текущий элемент к предыдущему
+        // перемещаем текущий элемент к предыдущему
         let moveAction = SKAction.move(to: CGPoint(x: p.position.x, y: p.position.y), duration: 0.1 )
-    // запуск действия перемещения
+        // запуск действия перемещения
         c.run(moveAction)
     }
+    
+    // поворот по часовой стрелке
+    func moveClockwise(){
+        // смещаем угол на 45 градусов
+        angle += CGFloat(Double.pi/2)
     }
+    // поворот против часовой стрелки
+    func moveCounterClockwise(){
+        angle -= CGFloat(Double.pi/2)
+    }
+}

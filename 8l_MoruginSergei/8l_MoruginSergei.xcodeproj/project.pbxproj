@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34D686F4248FBBDF009A3B63 /* 8l_MoruginSergei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8l_MoruginSergei.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34D686F4248FBBDF009A3B63 /* SuperSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D686F7248FBBDF009A3B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D686FD248FBBDF009A3B63 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		34D686FF248FBBE0009A3B63 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		34D686F5248FBBDF009A3B63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34D686F4248FBBDF009A3B63 /* 8l_MoruginSergei.app */,
+				34D686F4248FBBDF009A3B63 /* SuperSnake.app */,
 				34D6870E248FBBE1009A3B63 /* 8l_MoruginSergeiTests.xctest */,
 				34D68719248FBBE1009A3B63 /* 8l_MoruginSergeiUITests.xctest */,
 			);
@@ -157,7 +157,7 @@
 			);
 			name = 8l_MoruginSergei;
 			productName = 8l_MoruginSergei;
-			productReference = 34D686F4248FBBDF009A3B63 /* 8l_MoruginSergei.app */;
+			productReference = 34D686F4248FBBDF009A3B63 /* SuperSnake.app */;
 			productType = "com.apple.product-type.application";
 		};
 		34D6870D248FBBE1009A3B63 /* 8l_MoruginSergeiTests */ = {
@@ -458,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ostagram.-l-MoruginSergei";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSnake;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ostagram.-l-MoruginSergei";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSnake;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
